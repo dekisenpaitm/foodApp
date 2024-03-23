@@ -8,11 +8,13 @@ import { HomeComponent } from './home/home.component';
 import {RatingModule} from "ng-starrating";
 import { SearchComponent } from './search/search.component';
 import {FormsModule} from "@angular/forms";
+import { TagsComponent } from './tags/tags.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path:'search/:searchTerm', component:HomeComponent }
+  { path:'search/:searchTerm', component:HomeComponent },
+  { path:'tag/:tag', component:HomeComponent}
 ]
 
 @NgModule({
@@ -20,7 +22,8 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
