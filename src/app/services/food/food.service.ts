@@ -15,6 +15,10 @@ export class FoodService {
     return tag=="All"? this.getAll() : this.getAll().filter(food => food.tags?.includes(tag));
   }
 
+  getFoodByID(id:number): Food{
+    return this.getAll().find(food => food.id == id)!
+  }
+
   getAllTags():Tag[]{
     return [
       { name: 'All', count: 14 },
