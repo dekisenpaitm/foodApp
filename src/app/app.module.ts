@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
+import {RatingModule} from "ng-starrating";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
