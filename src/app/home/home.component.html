@@ -1,5 +1,6 @@
-<ul *ngFor="let food of foods">
-  <li>
+<app-search></app-search>
+<ul>
+  <li *ngFor="let food of foods">
     <a>
       <img src="{{food.imageUrl}}" alt="picture of food">
       <div class="content">
@@ -7,7 +8,7 @@
         <span class="favorite {{food.favorite?'':'not'}}">
           ♥
         </span>
-        <star-rating
+        <div class="stars"><star-rating
           [value]="food.stars"
           [totalstars]="5"
           checkedcolor="red"
@@ -15,19 +16,19 @@
           size="18px"
           [readonly]="true"
           (rate)="onRate($event)">
-        </star-rating>
+        </star-rating></div>
         <div class="product-item-footer">
           <div class="origins">
             <span *ngFor="let origin of food.origins">
               {{origin}}
             </span>
           </div>
+          <div class="cook-time">
+            <span>⏲️ {{food.cookTime}}</span>
+          </div>
         </div>
-        <div class="cook-time">
-          <span>⏲️ {{food.cookTime}}</span>
-        </div>
+        <div class="price">{{food.price | currency}}</div>
       </div>
-      <div class="price">{{food.price | currency}}</div>
     </a>
   </li>
 </ul>
