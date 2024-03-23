@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import {RatingModule} from "ng-starrating";
 import { SearchComponent } from './search/search.component';
 import {FormsModule} from "@angular/forms";
 import { TagsComponent } from './tags/tags.component';
+import { FoodPageComponent } from './food-page/food-page.component';
+import {AppRoutingModule} from "./app-routing/app-routing.module";
 
-const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path:'search/:searchTerm', component:HomeComponent },
-  { path:'tag/:tag', component:HomeComponent}
-]
+
 
 @NgModule({
   declarations: [
@@ -23,13 +18,14 @@ const routes: Routes = [
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    TagsComponent
+    TagsComponent,
+    FoodPageComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule,
     RatingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
