@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FoodService} from "../services/food/food.service";
 import {Food} from "../shared/models/Food";
-import {StarRatingComponent} from "ng-starrating";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -24,10 +23,6 @@ export class HomeComponent implements OnInit {
       }
     })
 
-
-  }
-
-  onRate($event: { oldValue: number; newValue: number; starRating: StarRatingComponent }) {
 
   }
 }

@@ -9,14 +9,6 @@ notFoundMessage="Food Not Found!"></app-not-found>
       <span class="name">{{food.name}}</span>
       <span class="favorite {{food.favorite?'':'.not'}}">♥</span>
     </div>
-    <div class="rating"><star-rating
-      [value]="food.stars"
-      [totalstars]="5"
-      checkedcolor="red"
-      uncheckedcolor="black"
-      size="30px"
-      [readonly]="true"
-      (rate)="onRate($event)"></star-rating></div>
     <div class="origins">
     <span *ngFor="let origin of food.origins">
       {{origin}}
