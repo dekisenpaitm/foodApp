@@ -1,4 +1,8 @@
-<div class="container">
+<app-not-found [visible]="!food"
+resetLinkText="Back To Homepage"
+notFoundMessage="Food Not Found!"></app-not-found>
+
+<div *ngIf="food" class="container">
   <img [src]="food.imageUrl" [alt]="food.name">
   <div class="details">
     <div class="header">
@@ -13,20 +17,20 @@
       size="30px"
       [readonly]="true"
       (rate)="onRate($event)"></star-rating></div>
-  </div>
-  <div class="origins">
+    <div class="origins">
     <span *ngFor="let origin of food.origins">
       {{origin}}
     </span>
-  </div>
-  <div class="tags">
-    <app-tags [foodPageTags]="food.tags"></app-tags>
-  </div>
-  <div class="cook-time">
+    </div>
+    <div class="tags">
+      <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>
+    </div>
+    <div class="cook-time">
     <span>
       Time to cook about <strong>{{food.cookTime}}</strong> minutes!
     </span>
+    </div>
+    <div class="price"><span>{{food.price | currency}}</span></div>
+    <button (click)="addToCart()">Add to Cart</button>
   </div>
-  <div class="price"><span>{{food.price | currency}}</span></div>
-  <button>Add to Cart</button>
 </div>

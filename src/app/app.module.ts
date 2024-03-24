@@ -9,6 +9,8 @@ import {FormsModule} from "@angular/forms";
 import { TagsComponent } from './tags/tags.component';
 import { FoodPageComponent } from './food-page/food-page.component';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -19,7 +21,9 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
     HomeComponent,
     SearchComponent,
     TagsComponent,
-    FoodPageComponent
+    FoodPageComponent,
+    CartPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
